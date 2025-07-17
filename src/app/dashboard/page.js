@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import { Mail, FileText, Send, Archive, Users, Calendar, TrendingUp, Clock } from 'lucide-react';
+import { signOut } from "next-auth/react";
 
 const Dashboard = () => {
   // Data dummy untuk demo
@@ -65,6 +68,10 @@ const Dashboard = () => {
                   day: 'numeric' 
                 })}
               </div>
+              <button 
+                onClick={() => signOut({ callbackUrl: '/' })} 
+                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
+              >Keluar Anjay</button>
             </div>
           </div>
         </div>
